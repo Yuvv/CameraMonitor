@@ -159,6 +159,7 @@ namespace Monitor {
                 }
                 sqlite.deleteCamera(camera);
                 lbCameras.Items.RemoveAt(lbCameras.SelectedIndex);
+                cameras.Remove(camera);
             } catch (System.Data.SQLite.SQLiteException ex) {
                 MessageBox.Show("删除失败！出现错误：\n" + ex.Message);
                 _log.Error(ex);
